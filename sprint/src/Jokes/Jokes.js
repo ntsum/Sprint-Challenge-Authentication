@@ -1,7 +1,14 @@
 import React from "react";
 import axios from "axios";
-
+import styled from "styled-components";
 import requiresAuth from "../Authentication/requiresAuth.js";
+
+const List = styled.div`
+  margin: 0 auto;
+  color: indigo;
+  font-weight: bold;
+  line-height: 2;
+`;
 
 class Jokes extends React.Component {
   state = {
@@ -10,14 +17,14 @@ class Jokes extends React.Component {
 
   render() {
     return (
-      <>
+      <List>
         <h2>DAD JOKES!!!!!!!!!!!</h2>
         <ul>
           {this.state.jokes.map(user => (
-            <li key={user.id}>{user.joke}</li>
+            <h3 key={user.id}>{user.joke}</h3>
           ))}
         </ul>
-      </>
+      </List>
     );
   }
 
